@@ -1,4 +1,4 @@
-import { ChartsModule } from './charts.module';
+import { ChartsModule } from './barcharts.module';
 
 describe('ChartsModule', () => {
     let chartsModule: ChartsModule;

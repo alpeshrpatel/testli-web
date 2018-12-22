@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule as FormModule, ReactiveFormsModule } from '@angular/forms';
+
 import {
     MatAutocompleteModule, MatCardModule, MatCheckboxModule, MatDatepickerModule,
     MatFormFieldModule, MatInputModule, MatNativeDateModule, MatRadioModule, MatSelectModule,
-    MatSliderModule, MatSlideToggleModule
+    MatSliderModule, MatSlideToggleModule,MatButtonModule
 } from '@angular/material';
 
 
@@ -32,6 +33,7 @@ import { CreateSetComponent } from './create-set.component';
         MatFormFieldModule,
         MatSelectModule,
         MatSliderModule,
+        MatButtonModule,
         FlexLayoutModule.withConfig({addFlexToParent: false})
     ],
     declarations: [

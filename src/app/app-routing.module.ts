@@ -11,6 +11,10 @@ const routes: Routes = [
     {
         path: 'login',
         loadChildren: './login/login.module#LoginModule'
+    },
+    {
+        path: 'register',
+        loadChildren: './register/register.module#RegisterModule'
     }
 ];
 
@@ -19,4 +23,4 @@ const routes: Routes = [
     exports: [RouterModule],
     providers: [AuthGuard]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

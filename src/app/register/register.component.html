@@ -1,8 +1,14 @@
 <div class="login-page">
     <div class="content">
-        <form class="login-form" #registerForm="ngForm" fxFlex>
+        <form class="login-form" novalidate #registerForm="ngForm" fxFlex>
             <div class="text-center">
                 <h2 class="app-name">Register</h2>
+            </div>
+            <div *ngIf="isSuccess" class="alert alert-success">
+                {{message}}
+            </div>
+            <div *ngIf="isError" class="alert alert-danger">
+                {{message}}
             </div>
             <div fxFlex fxlayout="row" fxlayout.lt-md="column">
                 <div fxFlexFill>
@@ -87,7 +93,7 @@
             <div fxFlex fxLayout="row" fxLayout.lt-md="column">
                 <div fxFlexFill>
                     <button mat-raised-button color="primary" class="w-100" [disabled]="registerForm.form.invalid"
-                        (click)="onRegister()">Register</button>
+                        (click)="onRegister(registerForm)">Register</button>
                 </div>
             </div>
             <div fxFlex fxLayoutAlign="center" style="margin: 20px 0 30px 0">

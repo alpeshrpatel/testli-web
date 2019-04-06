@@ -1,8 +1,11 @@
 <div class="login-page">
     <div class="content">
-        <form class="login-form" #loginForm="ngForm" fxFlex>
+        <form class="login-form" novalidate #loginForm="ngForm" fxFlex>
             <div class="text-center">
                 <h2 class="app-name">Login</h2>
+            </div>
+            <div *ngIf="isError" class="alert alert-danger">
+                {{message}}
             </div>
             <div fxFlex fxlayout="row" fxlayout.lt-md="column">
                 <div fxFlexFill>

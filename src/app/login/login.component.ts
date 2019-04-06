@@ -11,6 +11,9 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
+    isError = false;
+    message = '';
+
     loginModel: LoginModel;
 
     constructor(
@@ -22,12 +25,17 @@ export class LoginComponent implements OnInit {
     }
 
     onLogin() {
+        this.isError = false;
         this.loginService.loginService(this.loginModel).subscribe((res) => {
-            console.log(res);
+            localStorage.setItem('isLoggedin', 'true');
+            this.router.navigate(['/dashboard']);
         }, (error) => {
-            console.log(error);
+            this.isError = true;
+            if (error.error.message) {
+                this.message = error.error.message;
+            } else {
+                this.message = 'Invalid credentials.';
+            }
         });
-        // localStorage.setItem('isLoggedin', 'true');
-        // this.router.navigate(['/dashboard']);
     }
 }

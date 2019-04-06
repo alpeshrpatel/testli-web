@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { RegisterModel } from './register.model';
 import { RegisterService } from './register.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-register',
@@ -10,6 +11,10 @@ import { RegisterService } from './register.service';
 })
 
 export class RegisterComponent implements OnInit {
+
+    isSuccess = false;
+    isError = false;
+    message = '';
 
     registerModel: RegisterModel;
 
@@ -21,11 +26,20 @@ export class RegisterComponent implements OnInit {
         this.registerModel = new RegisterModel();
     }
 
-    onRegister() {
+    onRegister(registerForm: NgForm) {
+        this.isSuccess = false;
+        this.isError = false;
         this.registerService.registerService(this.registerModel).subscribe((res) => {
-            console.log(res);
+            this.isSuccess = true;
+            registerForm.reset();
+            this.message = 'You have successfully registered.';
         }, (error) => {
-            console.log(error);
+            this.isError = true;
+            if (error.error.message) {
+                this.message = error.error.message;
+            } else {
+                this.message = 'Something is wrong.';
+            }
         });
     }
 }

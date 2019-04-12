@@ -5,17 +5,17 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/mat
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 
-import { LoginRoutingModule } from './login-routing.module';
-import { LoginComponent } from './login.component';
+import { RegisterRoutingModule } from './register-routing.module';
+import { RegisterComponent } from './register.component';
+import { RegisterService } from './register.service';
 import { SharedModule } from '../shared/shared.module';
-import { LoginService } from './login.service';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         CustomFormsModule,
-        LoginRoutingModule,
+        RegisterRoutingModule,
         MatInputModule,
         MatCheckboxModule,
         MatButtonModule,
@@ -23,8 +23,8 @@ import { LoginService } from './login.service';
         FlexLayoutModule.withConfig({ addFlexToParent: false })
     ],
     providers: [
-        LoginService
+        RegisterService
     ],
-    declarations: [LoginComponent]
+    declarations: [RegisterComponent]
 })
-export class LoginModule { }
+export class RegisterModule { }

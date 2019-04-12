@@ -31,4 +31,4 @@ import { NavComponent } from './nav/nav.component';
     ],
     declarations: [LayoutComponent, NavComponent, TopnavComponent, SidebarComponent]
 })
-export class LayoutModule {}
+export class LayoutModule { }

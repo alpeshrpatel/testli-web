@@ -17,3 +17,25 @@ body {
 .mb-20 {
     margin-bottom: 20px;
 }
+
+.mat-error {
+    margin-top: 20px;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .125rem;
+}
+.alert-success {
+    color: #007f00;
+    background-color: #e5ffe5;
+    border-color: #e5ffe5;
+}
+.alert-danger {
+    color: #7f231c;
+    background-color: #fdd9d7;
+    border-color: #fccac7;
+}

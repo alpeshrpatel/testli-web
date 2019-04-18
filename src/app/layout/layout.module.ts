@@ -15,6 +15,7 @@ import { TopnavComponent } from './components/topnav/topnav.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { NavComponent } from './nav/nav.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [
@@ -23,6 +24,7 @@ import { NavComponent } from './nav/nav.component';
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,
+        FlexLayoutModule,
         MatIconModule,
         MatInputModule,
         MatMenuModule,

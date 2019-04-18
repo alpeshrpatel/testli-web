@@ -1,0 +1,27 @@
+.sideNav-height {
+  height: calc(100% - 64px) !important;
+  min-height: calc(100% - 64px) !important;
+  top: 64px;
+}
+
+.mat-sidenav.sidebar-panel {
+  position: absolute !important;
+  overflow-x: hidden;
+  width: 15rem;
+  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.mat-drawer-transition .mat-drawer-content {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-property: transform, margin-left, margin-right;
+}
+
+.mat-sidenav.sidebar-panel .navigation .mat-icon:not(.menu-caret) {
+  margin-right: 24px;
+}
+
+.material-icons {
+    text-decoration: blink !important;
+}

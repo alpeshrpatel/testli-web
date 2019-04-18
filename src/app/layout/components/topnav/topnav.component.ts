@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
     selector: 'app-topnav',
@@ -8,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./topnav.component.scss']
 })
 export class TopnavComponent implements OnInit {
+    @Input() sidenav: MatSidenav;
     public pushRightClass: string;
 
     constructor(public router: Router, private translate: TranslateService) {

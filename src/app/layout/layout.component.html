@@ -1,6 +1,42 @@
 <!-- <app-nav></app-nav> -->
-<app-topnav></app-topnav>
-<app-sidebar></app-sidebar>
+<!-- <app-topnav></app-topnav> -->
+<!-- <app-sidebar></app-sidebar>
 <div class="main-container">
     <router-outlet></router-outlet>
-</div>
+</div> -->
+
+<app-topnav [sidenav]="sidenav"></app-topnav>
+<mat-sidenav-container fxFill class="sideNav-height">
+  <mat-sidenav class="sidebar-panel" id="sidebar-panel" #sidenav  [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile" [disableClose]="!isMobile"
+    ngClass.gt-sm="has-border">
+    <nav>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/dashboard']">
+          <mat-icon class="sidenav-icon">dashboard</mat-icon> {{ 'Dashboard' | translate }}
+        </a>
+        <mat-divider></mat-divider>
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/createset']">
+          <mat-icon class="sidenav-icon">input</mat-icon> {{ 'Create Quiz' | translate }}
+        </a>
+        <mat-divider></mat-divider>
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/charts']">
+          <mat-icon class="sidenav-icon">bar_chart</mat-icon> {{ 'Charts' | translate }}
+        </a>
+        <mat-divider></mat-divider>
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/lastactivity']">
+          <mat-icon class="sidenav-icon">table_chart</mat-icon> {{ 'History' | translate }}
+        </a>
+        <mat-divider></mat-divider>
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/lastactivity']">
+          <mat-icon class="sidenav-icon">table_chart</mat-icon> {{ 'Membership' | translate }}
+        </a>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

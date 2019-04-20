@@ -1,0 +1,4 @@
+<span [hidden]="!loading">
+  <mat-progress-bar mode="indeterminate" color="primary"></mat-progress-bar>  
+</span>
+<router-outlet [hidden]="loading"></router-outlet>

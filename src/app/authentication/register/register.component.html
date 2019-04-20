@@ -1,0 +1,96 @@
+<div class="account-wrapper">
+    <div class="account">
+        <mat-card>
+            <mat-card-title>
+                <div class="text-center pb-1">
+                    Register
+                </div>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="ntx_login_content">
+                    <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+                        <div>
+                            <div *ngIf="isSuccess" class="alert alert-success">
+                                {{message}}
+                            </div>
+                            <div *ngIf="isError" class="alert alert-danger">
+                                {{message}}
+                            </div>
+                            <div fxLayout="column" fxLayoutAlign="space-around">
+                                <div class="pb-1">
+                                    <mat-form-field>
+                                        <input matInput type="email" placeholder="First name" name="firstName"
+                                            #firstNameInput="ngModel" [(ngModel)]="registerModel.fname" maxlength="32"
+                                            required minLength="2">
+                                    </mat-form-field>
+                                    <div *ngIf="firstNameInput.touched && firstNameInput.invalid">
+                                        <small class="mat-text-warn" *ngIf="firstNameInput?.errors.required">First name
+                                            is required.</small>
+                                        <small class="mat-text-warn"
+                                            *ngIf="firstNameInput?.errors.maxlength && !firstNameInput?.errors.required">
+                                            First name length should be between 2 to 32.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="pb-1">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Last Name" name="lastName" #lastNameInput="ngModel"
+                                            [(ngModel)]="registerModel.lname" maxlength="32" required minlength="2">
+                                    </mat-form-field>
+                                    <div *ngIf="lastNameInput.touched && lastNameInput.invalid">
+                                        <small class="mat-text-warn" *ngIf="lastNameInput?.errors.required">
+                                            Last name is required.</small>
+                                        <small class="mat-text-warn"
+                                            *ngIf="lastNameInput?.errors.rangeLength && !lastNameInput?.errors.required">
+                                            Last name length should be between 2 to 32.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="pb-1">
+                                    <mat-form-field>
+                                        <input matInput type="email" placeholder="Email" name="email"
+                                            #emailInput="ngModel" [(ngModel)]="registerModel.email" required email>
+                                    </mat-form-field>
+                                    <div *ngIf="emailInput.touched && emailInput.invalid">
+                                        <small class="mat-text-warn" *ngIf="emailInput?.errors.required">
+                                            Email is required.</small>
+                                        <small class="mat-text-warn"
+                                            *ngIf="emailInput?.errors.email && !emailInput?.errors.required">
+                                            Email is not valid.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="pb-1">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Phone" name="phone" #phoneInput="ngModel"
+                                            [(ngModel)]="registerModel.phone" maxlength="20" required>
+                                    </mat-form-field>
+                                    <div *ngIf="phoneInput.touched && phoneInput.invalid">
+                                        <small class="mat-text-warn" *ngIf="phoneInput?.errors.required">
+                                            Phone is required.</small>
+                                    </div>
+                                </div>
+                                <div class="pb-1">
+                                    <mat-form-field>
+                                        <input matInput type="password" placeholder="Password" name="password"
+                                            #passwordInput="ngModel" [(ngModel)]="registerModel.pw" maxlength="20"
+                                            required>
+                                    </mat-form-field>
+                                    <div *ngIf="passwordInput.touched && passwordInput.invalid">
+                                        <small class="mat-text-warn" *ngIf="passwordInput?.errors.required">
+                                            Password is required.</small>
+                                    </div>
+                                </div>
+                                <button mat-raised-button color="warn" type="submit"
+                                    [disabled]="registerForm.form.invalid">Register</button>
+                            </div>
+                            <div class="pt-1 pb-1 text-center">
+                                <a [routerLink]="['/login']">Back To Login.</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

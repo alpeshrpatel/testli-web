@@ -1,0 +1,10 @@
+.input-error {
+    float: left;
+    color: #FF0035;
+    font-weight: normal;
+    text-align: left;
+}
+
+.form-control.ng-invalid {
+    box-shadow: inset 1px 1px 0px #FF0035, 1px 1px 1px #FF0035;
+}

@@ -16,6 +16,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {BarchartsComponent} from './layout/barcharts/barcharts.component';
+import {LinechartsComponent} from './layout/linecharts/linecharts.component';
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
@@ -28,7 +30,7 @@ export const createTranslateLoader = (http: HttpClient) => {
 };
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, BarchartsComponent,LinechartsComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

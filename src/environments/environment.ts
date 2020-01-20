@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  API_HOST_URL: 'http://3.135.62.9:3000/'
+  USER_ENDPOINT: 'http://localhost:3000/',
+  TESTLI_ENDPOINT: 'http://localhost:3100/'
 };

@@ -36,7 +36,7 @@ export class HttpClientService {
 
     private updateURL(url: string) {
         if (!url.includes('.json')) {
-            return environment.API_HOST_URL + url;
+            return environment.USER_ENDPOINT + url;
         } else {
             return url;
         }
